@@ -1,0 +1,17 @@
+import { createContext } from "react";
+
+const SpeakerContext = createContext();
+
+function SpeakerProvider({ children, updateRecord, speaker, insertRecord, deleteRecord }) {
+    return (
+        <SpeakerContext.Provider
+            value={{
+                speaker, updateRecord, 
+                insertRecord, deleteRecord
+            }}>
+            {children}
+        </SpeakerContext.Provider>
+    );
+}
+
+export {SpeakerContext, SpeakerProvider}; 
